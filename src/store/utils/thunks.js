@@ -12,6 +12,10 @@ export const fetchPosts = createAsyncThunk(
             // http://localhost:3004/posts?_page=1&_limit=6&_order=desc&_sort=id
             /*here we use temple string from argument*/
             const response = await axios.get(`${URL_SERV}/posts?_page=${page}&_limit=${limit}&_order=${order}&_sort=id`);
+
+           /* return item and articles  from posts.js reducer
+             item:[] linked to postsSlice
+           */
             const prevState = getState().posts;
              console.log(response.data)
             return {
