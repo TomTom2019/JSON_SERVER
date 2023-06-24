@@ -3,6 +3,7 @@ import {fetchPosts,fetchPostById} from '../utils/thunks'
 
 // now have a valid reducer => import store => index.js
 // createSlice and .addcase work together
+//
 export const postsSlice = createSlice({
 	name:'posts',
 	initialState:{

@@ -18,6 +18,7 @@ const PostComponent = ()=>{
 
 /*postById come from reducer
 posts from thunks
+hh
 */
 
     return(
