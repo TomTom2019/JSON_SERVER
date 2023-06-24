@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Moment from 'react-moment';
 import { fetchPostById } from '../../store/utils/thunks';
 
-
+import { Spinner } from 'react-bootstrap';
 
 const PostComponent = ()=>{
   const posts = useSelector((state)=>state.posts)
@@ -37,7 +37,8 @@ hh
                     <Moment format="DD MMMM">
                         {posts.postById.createdAt} 
                     </Moment>
-                </div>  
+                </div> 
+                {/*dangerouslySetInnerHTML  inject html*/} 
                 <div className="mt-3 content">
                     <div dangerouslySetInnerHTML={{
                         __html: posts.postById.content
@@ -45,8 +46,14 @@ hh
                 </div>
             </div>
             :null}
-
-         
+{/*code reusable*/}
+         {posts.loading ?
+             <div style={{textAlign:'center'}} >
+                <Spinner animation='border'role="status">
+                    <div className='visually-hidden'>Loading...</div>
+                </Spinner>
+             </div>
+           :null}
         
 
         </>

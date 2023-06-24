@@ -61,6 +61,7 @@ const HomePosts = () => {
                 :null}
 
             </Masonry>
+            {/*code reusable*/}
             {homePosts.loading ?
              <div style={{textAlign:'center'}} >
                 <Spinner animation='border'role="status">
