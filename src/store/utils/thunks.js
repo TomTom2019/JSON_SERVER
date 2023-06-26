@@ -30,7 +30,7 @@ export const fetchPosts = createAsyncThunk(
     }
 )
 // posts work with reducer
-//
+/*       */
 export const fetchPostById =createAsyncThunk(
       'posts/fetchPostById',
       async(id)=>{
