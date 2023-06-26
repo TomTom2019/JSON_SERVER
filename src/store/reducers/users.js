@@ -2,6 +2,7 @@ import {createSlice} from '@reduxjs/toolkit'
 import { addToNewsletter } from '../utils/thunks'
 
 // now have a valid reducer => import store => index.js
+// user.js thunks.js newsletter.js
 export const usersSlice = createSlice({
 	name:'users',
 	initialState:{
