@@ -2,6 +2,7 @@ import {Form,Button} from 'react-bootstrap'
 import {useRef,useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import {showToast} from './tools'
+import { clearNewsletter } from '../../store/reducers/users'
 
 import { addToNewsletter } from '../../store/utils/thunks'
 // e.preventDefault not reload page
@@ -36,6 +37,12 @@ const Newsletter = ()=>{
 
 
    }
+
+   useEffect(()=>{
+    return()=>{
+      dispatch(clearNewsletter())
+    }
+   },[])
 
 
 	return(

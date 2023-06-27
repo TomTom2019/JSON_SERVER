@@ -3,6 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux'
 import Moment from 'react-moment';
 import { fetchPostById } from '../../store/utils/thunks';
+import {clearPostById} from '../../store/reducers/posts'
+import Newsletter from '../utils/newsletter'
+
 
 import { Spinner } from 'react-bootstrap';
 
@@ -15,11 +18,17 @@ const PostComponent = ()=>{
    useEffect(()=>{
       dispatch(fetchPostById(params.id))
    },[])
-
 /*postById come from reducer
 posts from thunks
 hh
 */
+
+
+   useEffect(()=>{
+    return()=>{
+        dispatch(clearPostById())
+    }
+   },[])
 
     return(
      <>
@@ -54,7 +63,7 @@ hh
                 </Spinner>
              </div>
            :null}
-        
+        <Newsletter/>
 
         </>
 
