@@ -26,5 +26,6 @@ export const usersSlice = createSlice({
 	}
 })
 
+//clearPostById is action
 export const {clearNewsletter} = usersSlice.actions
 export default usersSlice.reducer

@@ -33,16 +33,17 @@ const Newsletter = ()=>{
          textInput.current.value = '';
 
          }
+           dispatch(clearNewsletter())
     })
 
 
    }
 
-   useEffect(()=>{
+/*   useEffect(()=>{
     return()=>{
       dispatch(clearNewsletter())
     }
-   },[])
+   },[])*/
 
 
 	return(

@@ -14,7 +14,7 @@ export const postsSlice = createSlice({
         
 	},
 	reducers:{
-       clearPostById:(state,action)=>{
+       clearPostById:(state)=>{
        state.postById = {}
        }
 	},
@@ -43,6 +43,8 @@ export const postsSlice = createSlice({
 }
 
 })
+
+// clearPostById is action
 
 export const {clearPostById} = postsSlice.actions
 export default postsSlice.reducer
