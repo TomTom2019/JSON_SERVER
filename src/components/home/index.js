@@ -1,7 +1,14 @@
+import HomePosts from './homePosts'
+import Newsletter from '../utils/newsletter'
+
+// get component homeposts here
+
 const Home = ()=>{
     return(
        <>
-       home
+       <HomePosts/>
+
+       <Newsletter/>
        </>
 
         )
