@@ -4,6 +4,8 @@ import * as Yup from 'yup'
 import {Alert} from 'react-bootstrap'
 import {useDispatch} from 'react-redux'
 
+import {sendMessage} from '../../store/utils/thunks'
+import {showToast} from '../utils/tools'
 
 const Contact = ()=>{
   const dispatch = useDispatch()
@@ -22,9 +24,16 @@ const Contact = ()=>{
       .max(500,'your message is too long')
       
     }),
-    onSubmit:(values,{restForm})=>{
-      /// dispatch
-      console.log(values)
+    onSubmit:(values,{resetForm})=>{
+      /*dispatch; for this dont go to redux but .unwrap() .catch()*/
+      dispatch(sendMessage(values))
+      .unwrap()
+      .then((response)=>{
+        if(response){
+          resetForm();
+          showToast('SUCCESS','will contact you soon')
+        }
+      })
     }
 
   })
