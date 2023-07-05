@@ -34,6 +34,9 @@ const Contact = ()=>{
           showToast('SUCCESS','will contact you soon')
         }
       })
+      .catch(err=>{
+          showToast('ERROR','try again later :-)')
+      })
     }
 
   })
